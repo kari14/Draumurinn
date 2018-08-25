@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Draumurinn">
+    <head>
+        <title>Draumurinn</title>
+        <meta charset="UTF-8"/>
+        <link href="src/styles/styles.css" rel="stylesheet" type="text/css"/>
+        <script src="/node_modules/angular/angular.js"></script>
+        <script src="src/js/app.js"></script>
+    </head>
+    <body>
+        <header ng-include="'src/views/header.html'"></header>
+        <div class="content">
+            <div ng-controller="FantasyController">
+                <input type="text" ng-model="search" placeholder="Search for player"/>
+                <ul>
+                    <li ng-repeat="player in players | orderBy: '-price' | filter: search">
+                        <img src="{{player.pic}}"/>
+                        <h3>{{player.name}} - {{player.price | currency}}</h3>
+                        <span class="{{player.team}}">{{player.team}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
