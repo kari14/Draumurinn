@@ -1,0 +1,9 @@
+<div>{{cash}}</div>
+<div ng-repeat="player in myTeam">
+    <h2>{{player.name}}</h2>
+    <img src="{{player.pic}}"/>
+    <div class="remove" ng-click="removePlayer(player)">x</div>
+</div>
+<div>
+    <input type="submit" value="Staðfesta lið"/>
+</div>
