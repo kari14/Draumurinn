@@ -7,7 +7,7 @@ h1,h2,h3{
   margin: 0;
 }
 
-img{
+.transferList{
     margin: -10px 10px 0, 0;
     float: left;
     width: 31px;
@@ -57,16 +57,6 @@ img{
     red 20px,
     #000 20px,
     #000 40px);
-}
-
-.team{
-  padding: 5px 10px;
-  border-radius: 10px;
-  margin-left: 5px;
-  color: #fff;
-  font-size: 15px;
-  text-transform: uppercase;
-  background: green;
 }
 
 #menu-bar{

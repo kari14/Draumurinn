@@ -14,8 +14,8 @@
                 <input type="text" ng-model="search" placeholder="Search for player"/>
                 <ul>
                     <li ng-repeat="player in players | orderBy: '-price' | filter: search">
-                        <img src="{{player.pic}}"/>
-                        <h3 ng-click="addPlayer(player)">{{player.name}} - {{player.price | currency}}</h3>
+                        <img class="transferList"src="{{player.pic}}"/>
+                        <h3 ng-click="transfer(player)">{{player.name}} - {{player.price | currency}}</h3>
                         <span class="{{player.team}}">{{player.team}}</span>
                     </li>
                 </ul>
