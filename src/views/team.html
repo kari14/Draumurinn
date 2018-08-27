@@ -1,11 +1,11 @@
 <div><h3>{{cash | currency}}</h3><h3>{{points}}</h3></div>
 <div>
-    <div ng-repeat="player in myTeam track by $index">
+    <div class="team" ng-repeat="player in myTeam track by $index">
         <h2>{{player.name}}</h2>
         <img ng-click="setPlayerOut($index)" src="{{player.pic}}"/>
         <!--<div class="remove" ng-click="removePlayer(player)">x</div>-->
     </div>
 </div>
 <div>
-    <input type="submit" value="Staðfesta lið" ng-click="confirmTeam()"/>
+    <input type="submit" value="Staðfesta lið" ng-click="confirmTeam()" ng-hide="submited"/>
 </div>

@@ -5,6 +5,7 @@ Draumurinn.controller('FantasyController', ['$scope', function($scope) {
     $scope.points = 0;
     //Index of the player that is going out.
     $scope.playerOut = '';
+    $scope.submited = false;
 
     $scope.confirmTeam = function() {
         var set = new Set();
@@ -20,10 +21,14 @@ Draumurinn.controller('FantasyController', ['$scope', function($scope) {
             return false;
         }
 
-        if ($scope.myTeam.length != 4) {
-            alert('Need to fill your team');
+        if ($scope.myTeam.includes(emptyPlayer)) {
+            alert('Please select your team');
             return false;
         }
+
+        //Ojjj alert!
+        alert('Team has been submited');
+        $scope.submited = true;
 
         return true;
     }

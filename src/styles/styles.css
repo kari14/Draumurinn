@@ -7,6 +7,15 @@ h1,h2,h3{
   margin: 0;
 }
 
+.team{
+    float: left;
+    padding: 10px;
+}
+
+.team:last-child {
+    border: solid 4px red;
+}
+
 .transferList{
     margin: -10px 10px 0, 0;
     float: left;
