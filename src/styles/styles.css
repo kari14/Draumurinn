@@ -7,23 +7,51 @@ h1,h2,h3{
   margin: 0;
 }
 
+.cash{
+    display: inline-block;
+}
+
+.points{
+    display: inline-block;
+    text-align: right;
+}
+
 .team{
     float: left;
-    padding: 10px;
+    padding: 20px;
+    border-radius: 50px;
 }
 
-.team:last-child {
+.team:nth-child(4) img{
     border: solid 4px red;
+    border-radius: 50px;
 }
 
-.transferList{
+.team:nth-child(8) img {
+    border: solid 4px red;
+    border-radius: 50px;
+}
+
+.team img {
+    width: 50%;
+    border-radius: 50px;
+}
+
+list ul{
+    height:230px;
+    width:100%;
+    overflow:hidden;
+    overflow-y: scroll;
+}
+
+list img{
     margin: -10px 10px 0, 0;
     float: left;
     width: 31px;
     border-radius: 10px;
 }
 
-.HK{
+.HK-A{
     padding: 5px 10px;
     border-radius: 10px;
     margin-left: 5px;
@@ -33,7 +61,27 @@ h1,h2,h3{
     background: red;
 }
 
-.KR{
+.HK-B{
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-left: 5px;
+    color: white;
+    font-size: 15px;
+    text-transform: uppercase;
+    background: red;
+}
+
+.KR-A{
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-left: 5px;
+    color: white;
+    font-size: 15px;
+    text-transform: uppercase;
+    background: black;
+}
+
+.KR-B{
     padding: 5px 10px;
     border-radius: 10px;
     margin-left: 5px;
@@ -94,6 +142,12 @@ h1,h2,h3{
 
 #menu-bar a{
   color: #fff
+}
+
+#menu-bar h3{
+    padding-left: 20px;
+    float: right;
+    display: inline-block;
 }
 
 main{

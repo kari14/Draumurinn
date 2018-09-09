@@ -7,20 +7,20 @@
         <script src="/node_modules/angular/angular.js"></script>
         <script src="src/js/app.js"></script>
     </head>
-    <body>
+    <body ng-controller="FantasyController">
         <header ng-include="'src/views/header.html'"></header>
         <div class="content">
-            <div ng-controller="FantasyController">
-                <input type="text" ng-model="search" placeholder="Search for player"/>
+            <input type="text" ng-model="search" placeholder="Search for player"/>
+            <list>
                 <ul>
                     <li ng-repeat="player in players | orderBy: '-price' | filter: search">
-                        <img class="transferList"src="{{player.pic}}"/>
+                        <img src="{{player.pic}}"/>
                         <h3 ng-click="transfer(player)">{{player.name}} - {{player.price | currency}}</h3>
                         <span class="{{player.team}}">{{player.team}}</span>
                     </li>
                 </ul>
-                <team ng-include="'src/views/team.html'"></team>
-            </div>
+            </list>
+            <team ng-include="'src/views/team.html'"></team>
         </div>
     </body>
 </html>

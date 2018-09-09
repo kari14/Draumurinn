@@ -8,11 +8,25 @@ Draumurinn.controller('FantasyController', ['$scope', function($scope) {
     $scope.submited = false;
 
     $scope.confirmTeam = function() {
-        var set = new Set();
+        //One big validation!
+
+        //validating the subs
+        var sexSet = new Set();
+        sexSet.add($scope.myTeam[3].sex);
+        sexSet.add($scope.myTeam[7].sex);
+
+        if (sexSet.length !== 2) {
+            alert('Invalid subs');
+            return false;
+        }
+
+        var teamSet = new Set();
         for (var i in $scope.myTeam) {
-            if (set.has(i.team)) {
+            if (teamSet.has(i.team)) {
                 alert('Too many players from the same team');
                 return false;
+            } else {
+                teamSet.add(i.team);
             }
         }
 
@@ -22,7 +36,7 @@ Draumurinn.controller('FantasyController', ['$scope', function($scope) {
         }
 
         if ($scope.myTeam.includes(emptyPlayer)) {
-            alert('Please select your team');
+            alert('Please fill your team');
             return false;
         }
 
@@ -46,10 +60,11 @@ Draumurinn.controller('FantasyController', ['$scope', function($scope) {
 
     $scope.players = [
     {
-        name: 'Kári',
-        price: 5000000,
-        team: 'KR',
+        name: 'Skúli Gunnarsson',
+        price: 3000000,
+        team: 'KR-A',
         pic: 'src/img/avatar.jpg',
+        sex: 'kk',
         points: 0
     },
     {
@@ -57,6 +72,7 @@ Draumurinn.controller('FantasyController', ['$scope', function($scope) {
         price: 1000000,
         team: 'BH',
         pic: 'src/img/avatar.jpg',
+        sex: 'kk',
         points: 0
     },
     {
@@ -64,6 +80,7 @@ Draumurinn.controller('FantasyController', ['$scope', function($scope) {
         price: 3000000,
         team: 'BH',
         pic: 'src/img/avatar.jpg',
+        sex: 'kk',
         points: 0
     },
     {
@@ -71,13 +88,15 @@ Draumurinn.controller('FantasyController', ['$scope', function($scope) {
         price: 1000000,
         team: 'BH',
         pic: 'src/img/avatar.jpg',
+        sex: 'kk',
         points: 0
     },
     {
         name: 'Bjarni Bjarna',
         price: 1000000,
-        team: 'HK',
+        team: 'HK-A',
         pic: 'src/img/avatar.jpg',
+        sex: 'kk',
         points: 0
     },
     {
@@ -85,6 +104,7 @@ Draumurinn.controller('FantasyController', ['$scope', function($scope) {
         price: 5000000,
         team: 'Víkingur',
         pic: 'src/img/avatar.jpg',
+        sex: 'kk',
         points: 0
     },
     {
@@ -92,19 +112,19 @@ Draumurinn.controller('FantasyController', ['$scope', function($scope) {
         price: 500000,
         team: 'KR-B',
         pic: 'src/img/avatar.jpg',
+        sex: 'kk',
         points: 0
-    }
-    
-    ];
+    }];
 
     var emptyPlayer = {
         name: '',
         price: 0,
         team: '',
         pic: 'src/img/avatar.jpg',
+        sex: 'kk',
         points: 0
     }
 
-    $scope.myTeam = [emptyPlayer, emptyPlayer, emptyPlayer, emptyPlayer];
+    $scope.myTeam = [emptyPlayer, emptyPlayer, emptyPlayer, emptyPlayer, emptyPlayer, emptyPlayer, emptyPlayer, emptyPlayer];
 
 }]);
